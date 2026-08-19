@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: raw_sales
+    database: bigquery-data-pipeline-504708
+    schema: raw_sales
+
+    tables:
+      - name: olist_customers
+
+      - name: olist_orders
+
+      - name: olist_order_items
+
+      - name: olist_order_payments
+
+      - name: olist_order_reviews
+
+      - name: olist_products
+
+      - name: olist_sellers
+
+      - name: olist_geolocation
+
+      - name: product_category_name_translation
