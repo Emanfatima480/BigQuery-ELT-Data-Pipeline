@@ -1,6 +1,29 @@
+# Python
 .venv/
 venv/
 __pycache__/
 *.pyc
+
+# Environment & credentials
 .env
 credentials/
+
+# Logs
+logs/
+airflow/logs/
+
+# Generated / cleaned data
+data/cleaned_data/
+
+# dbt generated files
+olist_dbt/target/
+olist_dbt/logs/
+
+# dbt local user settings
+olist_dbt/.user.yml
+olist_dbt/profiles.yml
+
+# Raw dataset
+data/*.csv
+# Raw dataset
+data/*.csv

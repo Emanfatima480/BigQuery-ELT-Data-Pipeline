@@ -7,7 +7,7 @@
 # # Create BigQuery client
 # client = bigquery.Client()
 
-# print("✅ Connected successfully!")
+# print(" Connected successfully!")
 
 # # List datasets
 # for dataset in client.list_datasets():
@@ -53,7 +53,7 @@ client = bigquery.Client(project=PROJECT_ID)
 tables = list(client.list_tables(DATASET_ID))
 
 if not tables:
-    print("❌ No tables found.")
+    print(" No tables found.")
     raise SystemExit(1)
 
 for table in sorted(tables, key=lambda x: x.table_id):

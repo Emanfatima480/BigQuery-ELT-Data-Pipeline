@@ -1,0 +1,28 @@
+services:
+
+  airflow:
+    build: .
+    image: bigquery-pipeline-airflow
+
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+
+      # Project files
+      - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
+      - ./olist_dbt:/opt/airflow/olist_dbt
+
+      # BigQuery credentials
+      - ./credentials:/opt/airflow/credentials:ro
+
+    ports:
+      - "8080:8080"
+
+    command: standalone

@@ -33,5 +33,7 @@ models:
   olist_dbt:
     staging:
       +materialized: view
+    marts:
+      +materialized: table  
 
     
